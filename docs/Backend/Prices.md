@@ -1,7 +1,7 @@
 ---
 title: Pricing Overview
 layout: page
-parent: GCP
+parent: Backend
 ---
 
 ## Google Cloud API Gateway Pricing
