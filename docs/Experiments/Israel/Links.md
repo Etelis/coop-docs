@@ -1,6 +1,5 @@
 ---
-title: Experiment Links
+title: Experiment Links -- Israel
 layout: page
-nav_order: 1
 parent: Israel
 ---
