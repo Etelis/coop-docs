@@ -1,14 +1,54 @@
 ---
-title: Coop Game Home
-layout: home
+title: Access Management for Coop Game Development
+layout: page
 ---
 
-Welcome to the **Coop Game** documentation site, where we delve into the intricacies of a cooperative multiplayer game developed using the powerful **libGDX** framework for Java, complemented by a robust Python-based backend hosted on **Google Cloud Platform (GCP)**. This site is designed to provide comprehensive information on the game mechanics, development insights, and how to engage with the Coop Game community.
+Welcome to the **Access Management for Coop Game Development** guide. This section provides a detailed overview of how to grant appropriate permissions for both server-side and application-related operations within Google Cloud Platform (GCP), ensuring your development team has the necessary access to perform their roles effectively while maintaining operational security and integrity.
 
-The Coop Game represents an exciting blend of cross-platform game development and cloud-based technologies, ensuring a seamless and dynamic gaming experience for players across various devices. Here, you'll find everything from getting started guides to advanced development techniques, leveraging **libGDX** for game development and **Python** for server-side logic.
+### Prerequisites
 
-**Getting Started with Coop Game Development:**
+Before proceeding, ensure you have administrator-level access to the respective GCP project. This is required to perform the tasks outlined in this guide.
 
-- **Explore libGDX:** Learn the basics of game development using the libGDX framework. Understand how to set up your development environment, create sprites, manage game physics, and integrate sound and music for a rich gaming experience.
-- **Backend Development with Python on GCP:** Dive into the Python-based backend, hosted on GCP, which handles multiplayer interactions, data storage, and real-time game state synchronization. Discover how to deploy and manage your game's backend infrastructure with Google Cloud Platform services.
-- **GitHub Pages for Documentation:** This site itself is a testament to the ease of documentation and deployment. Utilizing GitHub Pages and the Just the Docs theme, we've created a user-friendly documentation site that can be easily maintained and updated alongside game development.
+### Navigating to IAM & Admin
+
+1. **Log in** to your GCP account.
+2. Access the **IAM & Admin** dashboard from the main navigation menu to begin the process of assigning roles and permissions.
+
+### Project Selection
+
+- For **server-side operations**, select the project named **co-op-world-server**.
+- For **application-related operations**, choose the project titled **co-op-world-game**.
+
+### Server-side Operations Permissions
+
+#### Compute Admin
+
+- **Role**: `roles/compute.admin`
+- **Purpose**: Grants full control over all compute resources, essential for managing and configuring servers.
+
+#### Service Account User
+
+- **Role**: `roles/iam.serviceAccountUser`
+- **Purpose**: Allows actions on behalf of the service account, facilitating automated tasks and server-side resource management.
+
+### Application Operations Permissions
+
+#### App Engine Admin
+
+- **Role**: `roles/appengine.admin`
+- **Purpose**: Provides comprehensive management capabilities over App Engine applications, crucial for application deployment and maintenance.
+
+#### Service Account User
+
+- **Role Again**: `roles/iam.serviceAccountUser`
+- **Purpose Again**: Enables actions as the service account, supporting application automation and integration with GCP services.
+
+### Assigning Roles
+
+To assign roles:
+
+1. Navigate to the **IAM** section within the IAM & Admin dashboard.
+2. Click the pencil icon next to the user or service account to modify permissions.
+3. Use **+ADD ANOTHER ROLE** for each necessary role, selecting the appropriate roles from the dropdown menu.
+4. (Optional) Apply IAM conditions for advanced access control, if needed.
+5. Save your changes to apply the new permissions.
