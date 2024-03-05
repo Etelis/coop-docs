@@ -1,6 +1,7 @@
 ---
 title: Coop Game Home
 layout: home
+nav_order: 1
 ---
 
 Welcome to the **Coop Game** documentation site, where we delve into the intricacies of a cooperative multiplayer game developed using the powerful **libGDX** framework for Java, complemented by a robust Python-based backend hosted on **Google Cloud Platform (GCP)**. This site is designed to provide comprehensive information on the game mechanics, development insights, and how to engage with the Coop Game community.
