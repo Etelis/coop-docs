@@ -1,6 +1,7 @@
 ---
 title: API Gateway
 layout: page
+parent: GCP
 ---
 
 ## API Gateway in Co-Op World Game Development

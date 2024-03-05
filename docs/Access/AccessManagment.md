@@ -1,6 +1,7 @@
 ---
 title: Access Management for Coop Game Development
 layout: page
+parent: Access
 ---
 
 This section provides a detailed overview of how to grant appropriate permissions for both server-side and application-related operations within Google Cloud Platform (GCP), ensuring your development team has the necessary access to perform their roles effectively while maintaining operational security and integrity.

@@ -1,6 +1,7 @@
 ---
 title: Configuring Static IP Addresses in GCP
 layout: page
+parent: GCP
 ---
 
 ## Overview

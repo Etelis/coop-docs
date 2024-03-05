@@ -1,6 +1,7 @@
 ---
 title: Cloud Functions
 layout: page
+parent: GCP
 ---
 
 # Cloud Functions Guide for Co-Op World Game Development

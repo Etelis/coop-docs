@@ -1,6 +1,7 @@
 ---
 title: Prerequisites
 layout: page
+parent: GCP
 ---
 
 ## IAM Roles for Google Cloud Platform (GCP)
