@@ -1,8 +1,8 @@
 ---
 title: Experiment Links -- Macedonia
 layout: page
-parent: Macedonia
 nav_order: 1
+parent: Macedonia
 ---
 
 ## Participants' Progress
