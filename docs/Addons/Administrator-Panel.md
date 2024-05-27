@@ -11,6 +11,8 @@ parent: Addons
 This repository hosts the React frontend for the Admin Panel of the Co-op Game project. This application is designed to manage game settings, user data, and analytics, enhancing the administrative capabilities for game researchers and developers. It utilizes modern web technologies to ensure a responsive and user-friendly interface.
 
 [Admin Panel Platform](https://prolific-survey-xpdmwwgl7a-lm.a.run.app/login)
+
+
 [GitHub Repository](https://github.com/Etelis/Coop-Admin-Panel)
 
 ## Docker Configuration
