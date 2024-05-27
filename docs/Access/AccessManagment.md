@@ -16,8 +16,8 @@ Before proceeding, ensure you have administrator-level access to the respective 
 2. Access the **IAM & Admin** dashboard from the main navigation menu to begin the process of assigning roles and permissions.
 
 ### Project Selection
-![image](https://github.com/Etelis/coop-docs/assets/92247226/559f9cb1-2742-4c33-9d9c-a30623ab155e)
-![image](https://github.com/Etelis/coop-docs/assets/92247226/9dfd9fc6-6143-44b9-8b47-a740aca87114)
+![Project Selection](https://github.com/Etelis/coop-docs/blob/main/assets/92247226/559f9cb1-2742-4c33-9d9c-a30623ab155e.png)
+![Project Selection](https://github.com/Etelis/coop-docs/blob/main/assets/92247226/9dfd9fc6-6143-44b9-8b47-a740aca87114.png)
 
 - For **server-side operations**, select the project named **co-op-world-game**.
 - For **application-related operations**, choose the project titled **co-op-world-server**.
@@ -30,7 +30,7 @@ Before proceeding, ensure you have administrator-level access to the respective 
 - **Purpose**: Grants full control over all compute resources, essential for managing and configuring servers.
 
 #### Service Account User
-![image](https://github.com/Etelis/coop-docs/assets/92247226/f7cc003c-b97d-4caf-88fc-ab83a91be246)
+![Service Account User](https://github.com/Etelis/coop-docs/blob/main/assets/92247226/f7cc003c-b97d-4caf-88fc-ab83a91be246.png)
 
 - **Role**: `roles/iam.serviceAccountUser`
 - **Purpose**: Allows actions on behalf of the service account, facilitating automated tasks and server-side resource management.
@@ -48,7 +48,7 @@ Before proceeding, ensure you have administrator-level access to the respective 
 - **Purpose Again**: Enables actions as the service account, supporting application automation and integration with GCP services.
 
 ### Assigning Roles
-![image](https://github.com/Etelis/coop-docs/assets/92247226/ab84898a-26df-4e63-8838-84c499ee639c)
+![Assigning Roles](https://github.com/Etelis/coop-docs/blob/main/assets/92247226/ab84898a-26df-4e63-8838-84c499ee639c.png)
 
 To assign roles:
 
