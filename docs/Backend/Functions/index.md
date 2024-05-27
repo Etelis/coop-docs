@@ -3,6 +3,7 @@ layout: default
 title: Functions
 nav_order: 1
 has_children: true
+parent: Backend
 ---
 
 # Cloud Functions Guide for Co-Op World Game Development
