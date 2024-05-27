@@ -2,6 +2,7 @@
 title: addUserRecord
 layout: page
 parent: Functions
+grand_parent: Backend
 ---
 
 # addUserRecord Function

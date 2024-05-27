@@ -1,6 +1,6 @@
 ---
 title: Overview
-layout: page
+layout: default
 parent: Backend
 has_children: true
 ---
