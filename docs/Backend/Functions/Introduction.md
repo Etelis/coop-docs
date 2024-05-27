@@ -1,7 +1,8 @@
+
 ---
 title: Cloud Functions
 layout: page
-parent: Backend
+parent: Functions
 ---
 
 # Cloud Functions Guide for Co-Op World Game Development
@@ -47,20 +48,50 @@ Develop a fallback mechanism using `enqueue_to_topic()` function to handle failu
 
 ### MongoDB Initialization
 
-Use `initialize_mongodb()` to set up a connection to MongoDB, properly handling any connection issues and ensuring the client and collection are ready for operations.
+Use the `initialize_mongodb()` function to set up a connection to MongoDB, properly handling any connection issues and ensuring the client and collection are ready for operations.
+
+\`\`\`python
+# Initialize MongoDB client
+def initialize_mongodb():
+    try:
+        # Environment variables
+        MONGO_CONNECTION = os.environ.get('MONGO_CONNECTION')
+        MONGO_DB_NAME = os.environ.get('MONGO_DB_NAME')
+        MONGO_COLLECTION_NAME = os.environ.get('MONGO_COLLECTION_NAME')
+
+        client = MongoClient(MONGO_CONNECTION, serverSelectionTimeoutMS=5000)
+        client.server_info()
+        db = client[MONGO_DB_NAME]
+        collection = db[MONGO_COLLECTION_NAME]
+        return client, collection
+    except Exception as err:
+        return None, err
+\`\`\`
 
 ### Fallback Mechanism: Enqueue to Topic
 
 `enqueue_to_topic()` ensures failed operations are queued for retry, maintaining data integrity and operational reliability.
 
-## Testing Cloud Functions with Postman
+\`\`\`python
+# Function to enqueue message to Topic
+def enqueue_to_topic(cloud_function_identifier, request, error_received):
+    # Initialize Pub/Sub Publisher with environment variables
+    topic_id = os.environ.get('PUBSUB_TOPIC_ID')
+    project_id = os.environ.get('GCP_PROJECT_ID')  # Get project ID from environment variable
+    publisher = pubsub_v1.PublisherClient()
+    topic_path = f"projects/{project_id}/topics/{topic_id}"
 
-Testing your Cloud Functions can be efficiently done using Postman:
-
-1. **Obtain the Cloud Function URL** from the Cloud Functions dashboard under the "Trigger" tab.
-2. **Configure Postman**: Set up a new request with the function's URL, specifying the method, headers, and body as needed.
-3. **Send the Request** and analyze the response to ensure your function behaves as expected.
-
-## Conclusion
-
-Cloud Functions offer a robust platform for developing and managing the Co-Op World Game's backend functionalities. By leveraging this guide, developers can streamline the creation, deployment, and testing processes for their serverless functions, fostering a scalable and responsive game backend.
+    message_data = {
+        "cloudFunctionIdentifier": cloud_function_identifier,
+        "request": {
+            "headers": dict(request.headers),
+            "body": request.get_data(as_text=True),
+            "method": request.method,
+            "url": request.url,
+        },
+        "errorReceived": str(error_received)
+    }
+    
+    message_data_str = json.dumps(message_data)
+    publisher.publish(topic_path, message_data_str.encode("utf-8"))
+\`\`\`
