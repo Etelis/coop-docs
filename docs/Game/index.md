@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Experiments
-nav_order: 5
+title: Game
+nav_order: 3
 has_children: true
 ---
