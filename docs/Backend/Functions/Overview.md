@@ -1,7 +1,8 @@
 ---
 title: Overview
 layout: page
-parent: Functions
+parent: Backend
+has_children: true
 ---
 
 # Cloud Functions Guide for Co-Op World Game Development

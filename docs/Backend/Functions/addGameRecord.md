@@ -1,7 +1,7 @@
 ---
 title: addGameRecord
 layout: page
-parent: Functions
+parent: Overview
 ---
 
 # addGameRecord Function
