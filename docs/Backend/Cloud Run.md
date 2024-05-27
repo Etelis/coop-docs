@@ -2,6 +2,7 @@
 title: Configuring Static IP Addresses in GCP
 layout: page
 parent: Backend
+nav_order: 5
 ---
 
 ## Overview

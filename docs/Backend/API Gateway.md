@@ -2,6 +2,7 @@
 title: API Gateway
 layout: page
 parent: Backend
+nav_order: 3
 ---
 
 ## API Gateway in Co-Op World Game Development
