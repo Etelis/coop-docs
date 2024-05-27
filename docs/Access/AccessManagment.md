@@ -1,4 +1,3 @@
-
 ---
 title: Access Management for Coop Game Development
 layout: page
