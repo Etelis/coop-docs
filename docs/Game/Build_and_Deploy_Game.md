@@ -1,3 +1,4 @@
+
 ---
 title: Build and Deploy Game
 layout: page
@@ -70,6 +71,43 @@ To set up the necessary GitHub Secrets:
 
 9. **Deploy to App Engine**:
    The `gcloud app deploy app.yaml --quiet` command deploys the application to GCP App Engine using the configuration specified in the `app.yaml` file.
+
+## app.yaml Configuration
+
+The `app.yaml` file defines the configuration for deploying the application to Google App Engine. Below is an example `app.yaml` file and an explanation of its contents:
+
+```yaml
+runtime: java11
+env: standard
+
+handlers:
+- url: /.*
+  script: auto
+
+instance_class: F2
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 5
+  target_cpu_utilization: 0.6
+  target_throughput_utilization: 0.6
+```
+
+### Explanation of `app.yaml`
+
+- **runtime: java11**: Specifies that the application will run using Java 11.
+- **env: standard**: Indicates that the application will use the standard App Engine environment.
+- **handlers**: Defines the URL routing and handling. In this example, all URLs (`url: /.*`) are routed to the default handler (`script: auto`).
+- **instance_class: F2**: Specifies the instance class to be used. The F2 class provides more resources than the default F1 class.
+- **automatic_scaling**: Configures automatic scaling for the application.
+  - **min_instances: 0**: The minimum number of instances to keep running.
+  - **max_instances: 5**: The maximum number of instances to scale up to.
+  - **target_cpu_utilization: 0.6**: Target CPU utilization for scaling decisions.
+  - **target_throughput_utilization: 0.6**: Target throughput utilization for scaling decisions.
+
+### Handling a New Repository
+
+When introducing a new repository, ensure the `app.yaml` file is correctly configured and added to the root of the repository. The deployment process will automatically pick up this file and apply the specified configurations. Ensure that the new repository has the necessary GitHub Secrets (`GCP_SA_KEY` and `GCP_PROJECT_ID`) set up for authentication and deployment to GCP.
 
 ## Running the Workflow
 
