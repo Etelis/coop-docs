@@ -13,7 +13,7 @@ This repository hosts the React frontend for the Prolific Survey component of th
 [GitHub Repository](https://github.com/ChenRozenshtein/Coop-Game-Prolific-Survey)
 
 
-You can access the Prolific Survey platform [here](https://prolific-survey-xpdmwwgl7a-lm.a.run.app/)
+You can access the Prolific Survey platform [here](https://prolific-survey-template-xpdmwwgl7a-lm.a.run.app/)
 
 ## Docker Configuration
 
